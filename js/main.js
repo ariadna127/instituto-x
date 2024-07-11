@@ -1,7 +1,7 @@
 let alumnos = [];
 
 
-fetch("../json/alumnos.json")
+fetch("https://raw.githubusercontent.com/ariadna127/instituto-x/main/json/alumnos.json")
     .then(response => response.json())
     .then(data => {
         if (!localStorage.getItem("alumnos")) {
