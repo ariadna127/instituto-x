@@ -1,0 +1,377 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, p, input, textarea, ul{
+    margin: 0;
+    padding: 0;
+} 
+
+ul{
+    list-style: none;
+}
+
+li, input, button{
+    font-size: 1rem;
+}
+
+
+body{
+    background-color: rgb(7, 7, 41);
+    color: white;
+}
+
+/*HEADER*/
+
+header{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    padding: 1.5625rem;
+    height: 6.25rem;
+    border-bottom: 1px solid white;
+    width: 100%;
+}
+
+h1, .h2-footer{
+    color: orange;
+}
+
+h1 span, .h2-footer span{
+    color: white;
+}
+
+/*MAIN*/
+
+/*SECCION PRINCIAL*/
+
+.seccion-principal{
+    margin: 5rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.seccion-principal div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5625rem;
+
+}
+
+.h2-area{
+    font-size: 40px;
+
+}
+
+.menu li{
+    padding: .9375rem 0;
+    font-weight: bold;
+}
+
+.bi-card-text{
+    margin-right: .9375rem;
+
+}
+
+.btn-menu{
+    border: none;
+    transition: all 0.3s;
+    font-weight: bold;
+}
+
+.btn-menu:hover{
+    color: orange;
+    cursor: pointer;
+    font-size: large;
+}
+
+
+
+/*REGISTRO ALUMNO*/
+
+.div-form-registro{
+    width: 100%;
+    padding: 100px 0;
+    position: relative;
+}
+
+.volver-registro{
+    background-color: orange;
+    color: white;
+    width: 10%;
+    height: 1.875rem;
+    cursor: pointer;
+    position: absolute;
+    top: 3%;
+    margin-left: 2rem;
+}
+
+.div-form-registro h2{
+    text-align: center;
+    font-size: 40px;
+    padding-bottom: 5rem;
+    color: orange;
+}
+
+form input, button{
+    border: 1px solid white;
+    background-color: rgb(7, 7, 41);
+    height: 2.5rem;
+    color: white;
+}
+
+.form-registro{
+    display: flex;
+    gap: 1.5625rem;
+
+    color: orange;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.div-form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: .625rem;
+}
+
+/*LISTA ALUMNOS*/
+
+.listado-alumnos{
+    position: relative;
+    padding: 3.75rem 1rem;
+}
+
+
+.volver-listado{
+    background-color: orange;
+    color: white;
+    width: 10%;
+    height: 1.875rem;
+    cursor: pointer;
+    position: absolute;
+    top: 3%;
+
+}
+
+
+.contenedor-ol-li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.contenedor-li{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 2.5rem;
+
+}
+
+.contenedor-li li{
+    padding: 0 10px;
+    transition: all 0.3s;
+}
+
+.contenedor-li li:hover{
+    font-size: 1.2rem;
+    color: orange;
+    cursor: pointer;
+}
+
+
+
+
+
+/*CONTENEDOR ALUMNOS ASIGNATURAS*/
+
+.volver-alumnos{
+    background-color: orange;
+    color: white;
+    width: 10%;
+    height: 1.875rem;
+    cursor: pointer;
+    position: absolute;
+    top: 0.5%;
+}
+
+h3{
+    color: white;
+}
+
+.contenedor-alumnos{
+    position: relative;
+    padding: 0 1rem;
+    padding-top: 3.75rem;
+}
+
+.contenedor-alumnos h2, .listado-alumnos h2{
+    color: orange;
+    font-size: 2.1875rem;
+    text-align: center;
+    margin-bottom: 2.5rem
+}
+
+.alumno{
+    margin-bottom: 3.75rem;
+}
+
+.alumno h3{
+    font-size: 1.75rem;
+    text-decoration:underline;
+    margin-bottom: .625rem;
+    text-align: center;
+}
+
+.materias{
+    display: grid;
+    grid-template-columns: repeat(2, 49.3%);
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1.875rem;
+    margin-bottom: 1.875rem;
+}
+
+.materia{
+    border: 1px solid white;
+    height: 10.625rem;
+    background-color: rgb(8, 8, 33);
+    text-align: center;
+    font-size: 1rem;
+    line-height: 1.875rem;
+    padding: .625rem 0;
+}
+
+.materia p:last-child{
+    color: orange;
+}
+
+.materia h3{
+    font-size: 1.25rem;
+}
+.buton-baja{
+    width: 20%;
+    background-color: rgb(122, 3, 3);
+    cursor: pointer;
+
+}
+
+.alert-alumno-registrado{
+    height: 6.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: .9375rem;
+    margin-left: 1.875rem;
+    color: orange;
+}
+.continuar{
+    width: 10%;
+    height: 1.25rem;
+
+}
+
+footer{
+    border-top: 1px solid white;
+    height: 6.25rem;
+    padding-top: 1.875rem;
+    padding-bottom: 1.875rem;
+}
+
+footer h2,
+footer p{
+    padding-left: 1.875rem;
+    padding-bottom: .9375rem;
+
+}
+
+.disabled{
+    display: none;
+}
+
+.swal2-title{
+    color: orange !important;
+}
+
+
+/*****MEDIA QUERIES*****/
+
+@media (width <= 768px){
+
+    /*Seccion princial*/
+    .h2-area, .listado-alumnos h2, .contenedor-alumnos h2, .div-form-registro h2{
+        font-size: 28px;
+    }
+
+    .btn-menu:hover{
+        font-size: medium;
+    }
+
+    /*Lista alumnos*/
+    .listado-alumnos h2, .contenedor-alumnos h2, .div-form-registro h2{
+        margin-top: 1rem;
+    }
+
+    .contenedor-li{
+        gap: 1.5rem;
+    }
+
+    .contenedor-li li{
+        line-height: 2rem;
+    }
+
+    .contenedor-li li:hover{
+        font-size: medium;
+    }
+
+    .volver-listado, .volver-alumnos, .volver-registro{
+        width: 15%;
+        height: 25px;
+    }
+
+    /*Alumnos y asignaturas*/
+    .buton-baja{
+        width: 65%;
+        margin-left: 17.5%;
+        margin-right: 17.5%;
+        height: 1.875rem;
+    }
+    .alumno h3{
+        font-size: 1.4063rem;
+    }
+
+    .materia h3{
+        font-size: 1.125rem;
+    }
+
+    .materias{
+        display: grid;
+        grid-template-columns: repeat(1, 65%);
+        gap: 2rem;
+    }
+
+    /*Agregar alumno*/
+
+    .div-form-registro h2{
+        padding-bottom: 2.5rem;
+    }
+
+    .form-registro{
+        display: flex;
+        flex-direction: column;
+        width: 70%;
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+
+
+}

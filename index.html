@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instituto X</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+</head>
+
+<body>
+    <header id="header" class="header">
+        <h1>INSTITUTO <span>X</span></h1>
+    </header>
+    <main>
+        <section id="seccion-principal" class="seccion-principal ">
+            <div class="contenedor-menu">
+                <h2 class="h2-area">AREA DOCENTES</h2>
+                <ul class="menu">
+                    <li><button id="listado-alumnos" class="btn-menu"><i class="bi bi-card-text"></i>Listado de alumnos registrados</li></button>
+                    <li><button id="alumnos-asignaturas" class="btn-menu"><i class="bi bi-card-text"></i>Planilla asignaturas y calificaciones</li></button>
+                    <li><button id="registrar-alumno" class="btn-menu"><i class="bi bi-card-text"></i>Añadir alumno</li></button>
+                </ul>
+            </div>
+        </section>
+        <section id="seccion-lista-alumnos" class="listado-alumnos disabled">
+            <button id="volver-listado" class="volver-listado">Volver</button>
+            <h2>LISTADO DE ALUMNOS</h2>
+            <div class="contenedor-ol-li">
+                <ol id="contenedor-listado-alumnos" class="contenedor-li">
+                    <!--esto se llena con JS-->
+                    
+                </ol>
+            </div>
+        </section>
+        
+        
+        <section id="seccion-alumnos" class="contenedor-alumnos disabled">
+            <button id="volver-alumnos" class="volver-alumnos">Volver</button>
+            
+            <h2>ALUMNOS Y ASIGNATURAS</h2>
+            <div id="contenedor-alumnos">
+                <!--esto se llena con JS-->
+            </div>
+        </section>
+        <div id="div-form-registro" class="div-form-registro disabled">
+            <button id="volver-registro" class="volver-registro">Volver</button>
+            <h2>AÑADIR ALUMNO</h2>
+            
+            <form id="form-registro" class="form-registro" action="">
+                <div class="div-form">
+                    <label for="nombre-alumno">Nombre del alumno</label>
+                    <input type="text" name="nombre-alumno" id="nombre-alumno">
+                </div>
+                <div class="div-form">
+                    <h3>Materia: Matemáticas</h3>
+                    <label for="primer-trimestreM">Primer trimestre:</label>
+                    <input type="number" name="primer-trimestreM" id="primer-trimestreM" min="0" max="10">
+                    <label for="segundo-trimestreM">Segundo trimestre:</label>
+                    <input type="number" id="segundo-trimestreM" name="segundo-trimestreM" min="0" max="10">
+                    <label for="tercer-trimestreM">Tercer trimestre:</label>
+                    <input type="number" name="tercer-trimestreM" id="tercer-trimestreM" min="0" max="10">
+                </div>
+                <div class="div-form">
+                    <h3>Materia: Lengua</h3>
+                    <label for="primer-trimestreL">Primer trimestre:</label>
+                    <input type="number" name="primer-trimestreL" id="primer-trimestreL" min="0" max="10">
+                    <label for="segundo-trimestreL">Segundo trimestre:</label>
+                    <input type="number" name="segundo-trimestreL" id="segundo-trimestreL" min="0" max="10">
+                    <label for="tercer-trimestreL">Tercer trimestre:</label>
+                    <input type="number" name="tercer-trimestreL" id="tercer-trimestreL" min="0" max="10">
+                </div>
+                <div class="div-form">
+                    <h3>Materia: Ciencias</h3>
+                    <label for="primer-trimestreC">Primer trimestre:</label>
+                    <input type="number" name="primer-trimestreC" id="primer-trimestreC" min="0" max="10">
+                    <label for="segundo-trimestreC">Segundo trimestre:</label>
+                    <input type="number" name="segundo-trimestreC" id="segundo-trimestreC" min="0" max="10">
+                    <label for="tercer-trimestreC">Tercer trimestre:</label>
+                    <input type="number" name="tercer-trimestreC" id="tercer-trimestreC" min="0" max="10">
+                </div>
+                <div class="div-form">
+                    <button class="boton-enviar-registro" type="submit">ENVIAR</button>
+                </div>
+
+            </form>
+        </div>
+        <div id="alert-alumno-registrado" class="alert-alumno-registrado disabled">
+            <p>¡El alumno x se ha registrado exitosamente!</p>
+            <button id="continuar" class="continuar">Continuar</button>
+        </div>
+    </main>
+    <footer>
+        <h2 class="h2-footer">Instituto <span>X</span></h2>
+        <p class="texto-footer">© 2023 Ariadna Coronel</p>
+    </footer>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
