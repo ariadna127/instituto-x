@@ -43,6 +43,9 @@ let botonesDarBaja = document.querySelectorAll(".buton-baja");
 const seccionFormRegistro = document.querySelector("#div-form-registro");
 const formRegistro = document.querySelector('#form-registro');
 
+const selectListado = document.querySelector('#select-listado');
+const selectAlumnos = document.querySelector('#select-alumnos');
+
 
 
 //Funciones GET y SET
@@ -81,7 +84,7 @@ function mostrarListaAlumnos(alumnos) {
         li.innerHTML = `${alumno.nombre}`;
         contenedorListadoAlumnos.append(li);
     })
-    localStorage.setItem("alumnos", JSON.stringify(alumnos));
+    //localStorage.setItem("alumnos", JSON.stringify(alumnos));
     setSeccion(seccionListaAlumnosClase, seccionListaAlumnos, 'seccion-lista-alumnos');
     setSeccion(seccionAlumnosClase, seccionAlumnos, 'seccion-alumnos');
     setSeccion(seccionFormRegistroClase, seccionFormRegistro, 'seccion-form-registro');
@@ -133,7 +136,7 @@ function cargarAlumnosAsignaturas(alumnos) {
 
     actualizarBotonesDarBaja();
     //Guardamos en el localStorage el arreglo alumnos al final de la funcion
-    localStorage.setItem("alumnos", JSON.stringify(alumnos));
+    //localStorage.setItem("alumnos", JSON.stringify(alumnos));
     setSeccion(seccionListaAlumnosClase, seccionListaAlumnos, 'seccion-lista-alumnos');
     setSeccion(seccionAlumnosClase, seccionAlumnos, 'seccion-alumnos');
     setSeccion(seccionFormRegistroClase, seccionFormRegistro, 'seccion-form-registro');
@@ -178,6 +181,7 @@ const darDeBajaAlumno = (e) => {
         const index = alumnos.findIndex(alumno => alumno.id === idBotonBaja);
         //eliminamos el elemento de alumnos
         alumnos.splice(index, 1);
+        localStorage.setItem("alumnos", JSON.stringify(alumnos));
         console.log(alumnos);
         cargarAlumnosAsignaturas(alumnos);
         Toastify({
@@ -194,6 +198,7 @@ const darDeBajaAlumno = (e) => {
     })
     
 }
+
 
 
 
@@ -278,6 +283,38 @@ const agregarAlumno = () =>{
 
 
 
+//FUNCION: ordenar alumnos 
+function ordenarAlumnos(select) {
+    select.addEventListener('change', ()=>{
+        orden = select.value;
+        console.log(orden);
+        let alumnos = getAlumnosStorage();
+        console.log(alumnos);
+         // Hacer una copia del arreglo para no modificar el original
+        const alumnosCopia = [...alumnos];
+
+        if (orden === 'AZ' || orden === 'ZA') {
+            alumnosCopia.sort((a, b) => {
+                if (a.nombre < b.nombre) {
+                return orden === 'AZ' ? -1 : 1;
+                } else if (a.nombre > b.nombre) {
+                return orden === 'AZ' ? 1 : -1;
+                } else {
+                return 0;
+                }
+            });
+        }
+        if (select.id === 'select-listado') {
+            mostrarListaAlumnos(alumnosCopia);
+        } else {
+            cargarAlumnosAsignaturas(alumnosCopia);
+        }
+    })
+}
+
+ordenarAlumnos(selectAlumnos);
+ordenarAlumnos(selectListado);
+
 
 //EVENTO:  enviar los valores del form registro y agregar el alumno al array alumnos
 
@@ -346,6 +383,8 @@ function verificarSiExisteLS(params) {
 
 function volverASeccionPrincial(botonVolver) {
     botonVolver.addEventListener('click', ()=>{
+        selectListado.value = 'predeterminado';
+        selectAlumnos.value = 'predeterminado';
         seccionPrincipal.classList.remove('disabled');
         seccionListaAlumnos.classList.add('disabled');
         seccionAlumnos.classList.add('disabled');
@@ -356,6 +395,8 @@ function volverASeccionPrincial(botonVolver) {
         setSeccion(seccionPrincipalClase, seccionPrincipal, 'seccion-principal');
     })
 }
+
+
 
 //EVENTO y FUNCION al recargar el DOM
 

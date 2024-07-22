@@ -28,8 +28,18 @@
             </div>
         </section>
         <section id="seccion-lista-alumnos" class="listado-alumnos disabled">
-            <button id="volver-listado" class="volver-listado">Volver</button>
-            <h2>LISTADO DE ALUMNOS</h2>
+            <div class="div-encabezado">
+                <button id="volver-listado" class="volver-listado">Volver</button>
+                <h2>LISTADO DE ALUMNOS</h2>
+                <div class="contenedor-select">
+                    <span>Ordenar:</span>
+                    <select name="" id="select-listado" class="select">
+                        <option value="predeterminado">Predeterminado</option>
+                        <option value="AZ">A - Z</option>
+                        <option value="ZA">Z - A</option>
+                    </select>
+                </div>
+            </div>
             <div class="contenedor-ol-li">
                 <ol id="contenedor-listado-alumnos" class="contenedor-li">
                     <!--esto se llena con JS-->
@@ -40,9 +50,19 @@
         
         
         <section id="seccion-alumnos" class="contenedor-alumnos disabled">
-            <button id="volver-alumnos" class="volver-alumnos">Volver</button>
-            
-            <h2>ALUMNOS Y ASIGNATURAS</h2>
+            <div class="div-encabezado">
+                <button id="volver-alumnos" class="volver-alumnos">Volver</button>
+                <h2>ALUMNOS Y ASIGNATURAS</h2>
+                <div class="contenedor-select">
+                    <span>Ordenar:</span>
+                    <select name="" id="select-alumnos" class="select">
+                        <option value="predeterminado">Predeterminado</option>
+                        <option value="AZ">A - Z</option>
+                        <option value="ZA">Z - A</option>
+                    </select>
+                </div>
+            </div>
+
             <div id="contenedor-alumnos">
                 <!--esto se llena con JS-->
             </div>
